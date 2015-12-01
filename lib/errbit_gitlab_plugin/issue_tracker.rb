@@ -52,6 +52,20 @@ module ErrbitGitlabPlugin
       ))
     end
 
+    def self.icons
+      @icons ||= {
+                  create: [
+                  'image/png', ErrbitGitlabPlugin.read_static_file('gitlab_create.png')
+                  ],
+                  goto: [
+                  'image/png', ErrbitGitlabPlugin.read_static_file('gitlab_goto.png'),
+                  ],
+                  inactive: [
+                  'image/png', ErrbitGitlabPlugin.read_static_file('gitlab_inactive.png'),
+                  ]
+                }
+    end
+
     def url
       sprintf('%s/%s/issues', options['account'], options['alt_project_id'])
     end
